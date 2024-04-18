@@ -2,32 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+	:root {
+		--background: #5a0000; /* Background color */
+		--foreground: #bd2727; /* Default text color */
+
+		--card: #5a0000; /* Card background color */
+		--card-foreground: #bd2727; /* Card text color */
+
+		--popover: #5a0000; /* Popover background color */
+		--popover-foreground: #bd2727; /* Popover text color */
+
+		--primary: #bd2727; /* Primary color */
+		--primary-foreground: #ffffff; /* Primary text color */
+
+		--secondary: #7e0c0c; /* Secondary color */
+		--secondary-foreground: #7e0c0c; /* Secondary text color */
+
+		--muted: #bb0000; /* Muted color */
+		--muted-foreground: #ffffff; /* Muted text color */
+
+		--accent: #bb0000; /* Accent color */
+		--accent-foreground: #bd2727; /* Accent text color */
+
+		--destructive: #bd2727; /* Destructive color */
+		--destructive-foreground: #ffffff; /* Destructive text color */
+
+		--border: #bd2727; /* Border color */
+		--input: #bd2727; /* Input color */
+		--ring: #5a0000; /* Ring color */
+
+		--radius: 0.5rem; /* Border radius */
+	}
+
+	.dark {
+		--background: #bd2727; /* Dark mode background color */
+		--foreground: #ffffff; /* Dark mode text color */
+
+		--card: #bd2727; /* Dark mode card background color */
+		--card-foreground: #ffffff; /* Dark mode card text color */
+
+		--popover: #bd2727; /* Dark mode popover background color */
+		--popover-foreground: #ffffff; /* Dark mode popover text color */
+
+		--primary: #ffffff; /* Dark mode primary color */
+		--primary-foreground: #5a0000; /* Dark mode primary text color */
+
+		--secondary: #bb0000; /* Dark mode secondary color */
+		--secondary-foreground: #ffffff; /* Dark mode secondary text color */
+
+		--muted: #bb0000; /* Dark mode muted color */
+		--muted-foreground: #bd2727; /* Dark mode muted text color */
+
+		--accent: #bb0000; /* Dark mode accent color */
+		--accent-foreground: #ffffff; /* Dark mode accent text color */
+
+		--destructive: #bd2727; /* Dark mode destructive color */
+		--destructive-foreground: #ffffff; /* Dark mode destructive text color */
+
+		--border: #bb0000; /* Dark mode border color */
+		--input: #bb0000; /* Dark mode input color */
+		--ring: #bd2727; /* Dark mode ring color */
+	}
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer base {
+	* {
+		@apply border-border; /* Apply default border style to all elements */
+	}
+	body {
+		@apply bg-background text-foreground; /* Apply background and text color to body */
+	}
 }
