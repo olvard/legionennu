@@ -72,5 +72,6 @@
 	}
 	body {
 		@apply bg-background text-foreground; /* Apply background and text color to body */
+		@apply overflow-y-scroll;
 	}
 }

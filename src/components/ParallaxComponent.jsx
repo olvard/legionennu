@@ -1,10 +1,16 @@
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-export default function ParallaxComponent() {
+import { ParallaxBanner } from 'react-scroll-parallax'
+
+const Component = () => {
 	return (
-		<Parallax pages={3}>
-			<ParallaxLayer offset={0} speed={0.5} style={{ backgroundColor: '#805E73' }} />
-			<ParallaxLayer offset={1} speed={0.5} style={{ backgroundColor: '#87BCDE' }} />
-			<ParallaxLayer offset={2} speed={0.5} style={{ backgroundColor: '#87BCDE' }} />
-		</Parallax>
+		<ParallaxBanner
+			layers={[
+				{ image: 'p1.png', speed: -30 },
+				{ image: 'p2.png', speed: -20 },
+				{ image: 'p3.png', speed: -5 },
+			]}
+			className='aspect-[1.5/1]'
+		/>
 	)
 }
+
+export default Component
