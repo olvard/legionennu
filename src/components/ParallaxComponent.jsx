@@ -64,7 +64,7 @@ const Component = () => {
 	}
 
 	return (
-		<div>
+		<div className='pb-24'>
 			<ParallaxBanner layers={[background, foreground, logo, foreforeground]} className='h-96' />
 		</div>
 	)
