@@ -1,6 +1,9 @@
 import Nav from '@/components/Nav'
 import ParallaxComponent from '@/components/ParallaxComponent'
 import HejNollan from '@/components/HejNollan'
+import Divider from '@/components/Divider'
+import Nolleboken from '@/components/Nolleboken'
+import TextDivider from '@/components/TextDivider'
 import { Providers } from './providers'
 
 export default function Home() {
@@ -10,8 +13,11 @@ export default function Home() {
 			<Providers>
 				<ParallaxComponent />
 			</Providers>
-			<div className='h-screen flex flex-col items-center '>
+			<div className='h-9000 flex flex-col items-center space-y-40'>
 				<HejNollan />
+				<Divider />
+				<Nolleboken />
+				<TextDivider />
 			</div>
 		</>
 	)

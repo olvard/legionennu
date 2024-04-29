@@ -1,27 +1,15 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { useState, useEffect } from 'react'
 
 export default function HejNollan() {
-	const [typedText, setTypedText] = useState('')
-
-	useEffect(() => {
-		const text = 'Nollan'
-		let index = 0
-		const interval = setInterval(() => {
-			if (index < text.length) {
-				setTypedText((prev) => prev + text.charAt(index))
-				index++
-			} else {
-				clearInterval(interval)
-			}
-		}, 150)
-		return () => clearInterval(interval)
-	}, [])
-
 	return (
-		<Card className='w-9/12'>
+		<Card className='w-9/12 bg-gradient-to-r from-red-700 to-red-800'>
 			<CardHeader>
-				<CardTitle className='text-5xl font-bold text-white'>Hej {typedText}</CardTitle>
+				<CardTitle className='text-5xl font-bold text-white'>
+					Hej{' '}
+					<span className='bg-gradient-to-r from-red-400 via-red-400 to-red-500 inline-block text-transparent bg-clip-text'>
+						Nollan!
+					</span>
+				</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<p className='font-light text-white'>
