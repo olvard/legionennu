@@ -4,6 +4,7 @@ import HejNollan from '@/components/HejNollan'
 import Divider from '@/components/Divider'
 import Nolleboken from '@/components/Nolleboken'
 import TextDivider from '@/components/TextDivider'
+import Schema from '@/components/Schema'
 import { Providers } from './providers'
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
 				<Divider />
 				<Nolleboken />
 				<TextDivider />
+				<Schema />
 			</div>
 		</>
 	)
