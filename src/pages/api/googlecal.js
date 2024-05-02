@@ -36,10 +36,11 @@ async function listEvents(auth) {
 	const calendar = google.calendar({ version: 'v3', auth })
 	const res = await calendar.events.list({
 		calendarId: 'b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f@group.calendar.google.com',
-		timeMin: new Date().toISOString(),
 		maxResults: 10,
 		singleEvents: true,
 		orderBy: 'startTime',
 	})
+
+	console.log('Events:', res.data.items)
 	return res.data.items || []
 }
