@@ -32,23 +32,40 @@ function GetEvents() {
 		return [`${year}-${month}-${day}`, `${hours}:${minutes}`]
 	}
 
+	const eventsByDate = {}
+	events.forEach((event) => {
+		const date = formatDateTime(event.start.dateTime || event.start.date)[0]
+		if (!eventsByDate[date]) {
+			eventsByDate[date] = []
+		}
+		eventsByDate[date].push(event)
+	})
+
+	// Extract unique dates from events
+	const uniqueDates = Object.keys(eventsByDate)
+
 	return (
-		<div>
-			<h1>Upcoming Events</h1>
-			<ul>
-				{events.map((event, index) => (
-					<Card key={index} className='w-4/12'>
-						<CardHeader>
-							<CardTitle className='text-2xl font-bold text-white'>{event.summary}</CardTitle>
-						</CardHeader>
-						<CardFooter>
-							{formatDateTime(event.start.dateTime || event.start.date)[0]} |{' '}
-							{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
-							{formatDateTime(event.end.dateTime || event.end.date)[1]}
-						</CardFooter>
-					</Card>
+		<div className='overflow-x-auto'>
+			<div className='grid grid-cols-4 gap-5 max-h-[600px] grid-flow'>
+				{/* Render dates */}
+				{uniqueDates.map((date, index) => (
+					<div key={index}>
+						<h2 className='font-bold '>{date}</h2>
+						{/* Render events for the date */}
+						{eventsByDate[date].map((event, eventIndex) => (
+							<Card key={eventIndex} className='mb-4'>
+								<CardHeader>
+									<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
+								</CardHeader>
+								<CardFooter className='text-xs'>
+									{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
+									{formatDateTime(event.end.dateTime || event.end.date)[1]}
+								</CardFooter>
+							</Card>
+						))}
+					</div>
 				))}
-			</ul>
+			</div>
 		</div>
 	)
 }
@@ -56,7 +73,7 @@ function GetEvents() {
 export default function Schema() {
 	return (
 		<div className='w-9/12 h-96'>
-			<h1 className='text-5xl font-bold text-white'>Schema</h1>
+			<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 			{GetEvents()}
 		</div>
 	)
