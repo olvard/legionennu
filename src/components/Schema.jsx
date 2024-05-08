@@ -44,16 +44,41 @@ function GetEvents() {
 	// Extract unique dates from events
 	const uniqueDates = Object.keys(eventsByDate)
 
+	events.forEach((event) => {
+		console.log(parseFloat(formatDateTime(event.start.dateTime)[1]))
+		console.log(
+			parseFloat(formatDateTime(event.end.dateTime)[1]) - parseFloat(formatDateTime(event.start.dateTime)[1])
+		)
+		if (
+			parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
+				parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
+			2
+		) {
+			console.log('true')
+		} else {
+			console.log('false')
+		}
+	})
+
 	return (
-		<div className='overflow-x-auto'>
-			<div className='grid grid-cols-4 gap-5 max-h-[600px] grid-flow'>
+		<div className=''>
+			<div className='grid grid-cols-4 gap-5 max-h-[600px] '>
 				{/* Render dates */}
 				{uniqueDates.map((date, index) => (
 					<div key={index}>
 						<h2 className='font-bold '>{date}</h2>
 						{/* Render events for the date */}
 						{eventsByDate[date].map((event, eventIndex) => (
-							<Card key={eventIndex} className='mb-4'>
+							<Card
+								key={eventIndex}
+								className={`mb-4 ${
+									parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
+										parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
+									2
+										? 'h-44'
+										: 'h-20'
+								}`}
+							>
 								<CardHeader>
 									<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
 								</CardHeader>
