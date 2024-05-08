@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
-function GetEvents() {
+function GetEvents({ viewMode, setViewMode }) {
 	const [events, setEvents] = useState([])
 
 	useEffect(() => {
@@ -42,33 +43,19 @@ function GetEvents() {
 	})
 
 	// Extract unique dates from events
-	const uniqueDates = Object.keys(eventsByDate)
-
-	events.forEach((event) => {
-		console.log(parseFloat(formatDateTime(event.start.dateTime)[1]))
-		console.log(
-			parseFloat(formatDateTime(event.end.dateTime)[1]) - parseFloat(formatDateTime(event.start.dateTime)[1])
-		)
-		if (
-			parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
-				parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
-			2
-		) {
-			console.log('true')
-		} else {
-			console.log('false')
-		}
-	})
+	const currentDate = new Date()
+	const currentDateString = formatDateTime(currentDate.toISOString())[0]
+	const uniqueDates = viewMode === 'day' ? [currentDateString] : Object.keys(eventsByDate)
 
 	return (
 		<div className=''>
-			<div className='grid grid-cols-4 gap-5 max-h-[600px] '>
+			<div className={`${viewMode === 'day' ? 'flex flex-col' : 'grid grid-cols-4 gap-5'}`}>
 				{/* Render dates */}
 				{uniqueDates.map((date, index) => (
 					<div key={index}>
 						<h2 className='font-bold '>{date}</h2>
 						{/* Render events for the date */}
-						{eventsByDate[date].map((event, eventIndex) => (
+						{eventsByDate[date]?.map((event, eventIndex) => (
 							<Card
 								key={eventIndex}
 								className={`mb-4 ${
@@ -79,10 +66,10 @@ function GetEvents() {
 										: 'h-20'
 								}`}
 							>
-								<CardHeader>
-									<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
+								<CardHeader className='p-3'>
+									<CardTitle className='text-sm font-bold text-white '>{event.summary}</CardTitle>
 								</CardHeader>
-								<CardFooter className='text-xs'>
+								<CardFooter className='text-xs pl-3'>
 									{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
 									{formatDateTime(event.end.dateTime || event.end.date)[1]}
 								</CardFooter>
@@ -96,10 +83,31 @@ function GetEvents() {
 }
 
 export default function Schema() {
+	const [viewMode, setViewMode] = useState('day')
+
 	return (
 		<div className='w-9/12 h-96'>
-			<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
-			{GetEvents()}
+			<div className='flex justify-between items-center'>
+				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
+				<div>
+					<Button
+						className={`mx-4 ${viewMode === 'day' ? 'bg-accent text-white' : ''}`}
+						variant='outline'
+						onClick={() => setViewMode('day')}
+					>
+						Dag
+					</Button>
+					<Button
+						className={`mx-4 ${viewMode === 'week' ? 'bg-accent text-white' : ''}`}
+						variant='outline'
+						onClick={() => setViewMode('week')}
+					>
+						Vecka
+					</Button>
+				</div>
+			</div>
+
+			<GetEvents viewMode={viewMode} setViewMode={setViewMode} />
 		</div>
 	)
 }
