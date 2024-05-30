@@ -5,7 +5,7 @@ import Divider from '@/components/Divider'
 import Nolleboken from '@/components/Nolleboken'
 import TextDivider from '@/components/TextDivider'
 import Schema from '@/components/Schema'
-import { Providers } from './providers'
+import { Providers } from '@/pages/providers'
 
 export default function Home() {
 	return (
