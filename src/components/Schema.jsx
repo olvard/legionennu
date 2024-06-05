@@ -90,7 +90,7 @@ export default function Schema() {
 	const [query, setQuery] = useState('MT') // Default query
 
 	return (
-		<div className='w-9/12 h-max '>
+		<div id='schema' className='w-9/12 h-max '>
 			<div className='flex justify-between items-center'>
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>

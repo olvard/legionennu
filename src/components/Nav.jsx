@@ -10,19 +10,19 @@ const Nav = () => {
 						<div className='ml-6 flex items-center md:ml-0 '>
 							{/* Your navigation items */}
 							<a
-								href='#'
+								href='#nolleboken'
 								className='text-white hover:bg-accent px-3 py-1 rounded-md text-m font-bold mx-6'
 							>
 								Nolleboken
 							</a>
 							<a
-								href='#'
+								href='#schema'
 								className='text-white hover:bg-accent  px-3 py-1 rounded-md text-m font-bold mx-6'
 							>
 								Schema
 							</a>
 							<a
-								href='#'
+								href='#legenden'
 								className='text-white hover:bg-accent  px-3 py-1 rounded-md text-m font-bold mx-6'
 							>
 								Legenden
