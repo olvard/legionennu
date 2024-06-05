@@ -27,12 +27,6 @@ const Nav = () => {
 							>
 								Legenden
 							</a>
-							<a
-								href='#'
-								className='text-white hover:bg-accent  px-3 py-1 rounded-md text-m font-bold mx-6'
-							>
-								Spela
-							</a>
 						</div>
 					</div>
 				</div>

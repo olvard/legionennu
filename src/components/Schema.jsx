@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Card, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
-function GetEvents({ viewMode, setViewMode }) {
+function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 	const [events, setEvents] = useState([])
 
 	useEffect(() => {
 		const fetchEvents = async () => {
 			try {
-				const res = await fetch('/api/googlecal')
+				const res = await fetch(`/api/googlecal?q=${query}`)
 				if (res.ok) {
 					const data = await res.json()
 					setEvents(data)
@@ -21,7 +21,7 @@ function GetEvents({ viewMode, setViewMode }) {
 		}
 
 		fetchEvents()
-	}, [])
+	}, [query])
 
 	function formatDateTime(dateTimeString) {
 		const dateObj = new Date(dateTimeString)
@@ -84,6 +84,7 @@ function GetEvents({ viewMode, setViewMode }) {
 
 export default function Schema() {
 	const [viewMode, setViewMode] = useState('day')
+	const [query, setQuery] = useState('MT') // Default query
 
 	return (
 		<div className='w-9/12 h-96'>
@@ -104,10 +105,25 @@ export default function Schema() {
 					>
 						Vecka
 					</Button>
+					{/* Additional buttons to change the query parameter */}
+					<Button
+						className={`mx-4 ${query === 'MT' ? 'bg-accent text-white' : ''}`}
+						variant='outline'
+						onClick={() => setQuery('MT')}
+					>
+						MT
+					</Button>
+					<Button
+						className={`mx-4 ${query === 'GDK' ? 'bg-accent text-white' : ''}`}
+						variant='outline'
+						onClick={() => setQuery('GDK')}
+					>
+						GDK
+					</Button>
 				</div>
 			</div>
 
-			<GetEvents viewMode={viewMode} setViewMode={setViewMode} />
+			<GetEvents viewMode={viewMode} setViewMode={setViewMode} query={query} setQuery={setQuery} />
 		</div>
 	)
 }
