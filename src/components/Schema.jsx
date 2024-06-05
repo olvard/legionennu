@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardFooter, CardDescription } from '@/comp
 import { Button } from '@/components/ui/button'
 import { Pagination, PaginationNext, PaginationPrevious, PaginationContent, PaginationItem } from './ui/pagination'
 
-function GetEvents({ viewMode, setViewMode, query, setQuery }) {
+function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 	const [events, setEvents] = useState([])
 
 	useEffect(() => {
@@ -22,7 +22,7 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 		}
 
 		fetchEvents()
-	}, [query])
+	}, [query, currentDate])
 
 	function formatDateTime(dateTimeString) {
 		const dateObj = new Date(dateTimeString)
@@ -43,22 +43,17 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 		eventsByDate[date].push(event)
 	})
 
-	console.log(events[0])
-
-	// Extract unique dates from events
-	const currentDate = new Date()
-	const currentDateString = formatDateTime(currentDate.toISOString())[0]
-	const uniqueDates = viewMode === 'day' ? [currentDateString] : Object.keys(eventsByDate)
+	const uniqueDates = Object.keys(eventsByDate).sort()
 
 	return (
 		<div className='overflow-auto'>
 			<div className={`${viewMode === 'day' ? 'flex flex-col' : 'grid grid-cols-4 gap-5'}`}>
-				{/* Render dates */}
-				{uniqueDates.map((date, index) => (
-					<div key={index}>
-						<h2 className='font-bold '>{date}</h2>
-						{/* Render events for the date */}
-						{eventsByDate[date]?.map((event, eventIndex) => (
+				{/* Render current date */}
+				{viewMode === 'day' ? (
+					<div>
+						<h2 className='font-bold'>{currentDate}</h2>
+						{/* Render events for the current date */}
+						{eventsByDate[currentDate]?.map((event, eventIndex) => (
 							<Card
 								key={eventIndex}
 								className={`mb-4 ${
@@ -70,7 +65,7 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 								}`}
 							>
 								<CardHeader className='p-3 pb-0'>
-									<CardTitle className='text-sm font-bold text-white '>{event.summary}</CardTitle>
+									<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
 								</CardHeader>
 								<CardDescription className='mb-2 pl-3 text-xs font-thin'>
 									{event.location}
@@ -82,7 +77,38 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 							</Card>
 						))}
 					</div>
-				))}
+				) : (
+					/* Render dates and events in week mode */
+					uniqueDates.map((date, index) => (
+						<div key={index}>
+							<h2 className='font-bold'>{date}</h2>
+							{/* Render events for the date */}
+							{eventsByDate[date]?.map((event, eventIndex) => (
+								<Card
+									key={eventIndex}
+									className={`mb-4 ${
+										parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
+											parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
+										2
+											? 'h-44'
+											: 'h-20'
+									}`}
+								>
+									<CardHeader className='p-3 pb-0'>
+										<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
+									</CardHeader>
+									<CardDescription className='mb-2 pl-3 text-xs font-thin'>
+										{event.location}
+									</CardDescription>
+									<CardFooter className='text-xs pl-3'>
+										{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
+										{formatDateTime(event.end.dateTime || event.end.date)[1]}
+									</CardFooter>
+								</Card>
+							))}
+						</div>
+					))
+				)}
 			</div>
 		</div>
 	)
@@ -91,9 +117,22 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 export default function Schema() {
 	const [viewMode, setViewMode] = useState('day')
 	const [query, setQuery] = useState('MT') // Default query
+	const [currentDate, setCurrentDate] = useState(new Date().toISOString().split('T')[0])
+
+	const handleNextDate = () => {
+		const nextDate = new Date(currentDate)
+		nextDate.setDate(nextDate.getDate() + 1)
+		setCurrentDate(nextDate.toISOString().split('T')[0])
+	}
+
+	const handlePreviousDate = () => {
+		const previousDate = new Date(currentDate)
+		previousDate.setDate(previousDate.getDate() - 1)
+		setCurrentDate(previousDate.toISOString().split('T')[0])
+	}
 
 	return (
-		<div id='schema' className='w-9/12 h-max '>
+		<div id='schema' className='w-9/12 h-max'>
 			<div className='sm:flex-row flex-col flex justify-between sm:items-center'>
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>
@@ -129,17 +168,21 @@ export default function Schema() {
 					<Pagination className={`${viewMode === 'week' ? 'sm:hidden' : ''}`}>
 						<PaginationContent>
 							<PaginationItem>
-								<PaginationPrevious></PaginationPrevious>
+								<PaginationPrevious
+									onClick={handlePreviousDate}
+									// disabled={currentDate === new Date().toISOString().split('T')[0]}
+									className={currentDate === new Date().toISOString().split('T')[0] ? 'hidden' : ''}
+								/>
 							</PaginationItem>
 							<PaginationItem>
-								<PaginationNext></PaginationNext>
+								<PaginationNext onClick={handleNextDate} />
 							</PaginationItem>
 						</PaginationContent>
 					</Pagination>
 				</div>
 			</div>
 
-			<GetEvents viewMode={viewMode} setViewMode={setViewMode} query={query} setQuery={setQuery} />
+			<GetEvents viewMode={viewMode} currentDate={currentDate} setCurrentDate={setCurrentDate} query={query} />
 		</div>
 	)
 }
