@@ -87,11 +87,17 @@ export default function Legenden() {
 				/>
 			</div>
 			<br></br>
-			<p className='font-serif text-orange-100 opacity-70'>
-				Av solen kom de till jorden och tog sig över land och hav för att utföra deras uppdrag - att beskydda
-				Nollan.
-			</p>
-			<img src='group.png' alt='group' className='rounded-md border-double border-4 border-orange-100' />
+			<div className='flex flex-col justify-center items-center'>
+				<p className='font-serif text-orange-100 opacity-70'>
+					Av solen kom de till jorden och tog sig över land och hav för att utföra deras uppdrag - att
+					beskydda Nollan.
+				</p>
+				<img
+					src='group.png'
+					alt='group'
+					className='w-3/4 rounded-md border-double border-4 border-orange-100'
+				/>
+			</div>
 		</div>
 	)
 }
