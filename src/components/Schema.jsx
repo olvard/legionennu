@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 function GetEvents({ viewMode, setViewMode, query, setQuery }) {
@@ -42,13 +42,15 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 		eventsByDate[date].push(event)
 	})
 
+	console.log(events[0])
+
 	// Extract unique dates from events
 	const currentDate = new Date()
 	const currentDateString = formatDateTime(currentDate.toISOString())[0]
 	const uniqueDates = viewMode === 'day' ? [currentDateString] : Object.keys(eventsByDate)
 
 	return (
-		<div className=''>
+		<div className='overflow-auto'>
 			<div className={`${viewMode === 'day' ? 'flex flex-col' : 'grid grid-cols-4 gap-5'}`}>
 				{/* Render dates */}
 				{uniqueDates.map((date, index) => (
@@ -66,9 +68,10 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 										: 'h-20'
 								}`}
 							>
-								<CardHeader className='p-3'>
+								<CardHeader className='p-3 pb-0'>
 									<CardTitle className='text-sm font-bold text-white '>{event.summary}</CardTitle>
 								</CardHeader>
+								<CardDescription className=' pl-3 text-xs font-thin'>{event.location}</CardDescription>
 								<CardFooter className='text-xs pl-3'>
 									{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
 									{formatDateTime(event.end.dateTime || event.end.date)[1]}
@@ -87,7 +90,7 @@ export default function Schema() {
 	const [query, setQuery] = useState('MT') // Default query
 
 	return (
-		<div className='w-9/12 h-96'>
+		<div className='w-9/12 h-max '>
 			<div className='flex justify-between items-center'>
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>

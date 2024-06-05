@@ -39,7 +39,7 @@ async function listEvents(auth, query) {
 	const calendar = google.calendar({ version: 'v3', auth })
 	const res = await calendar.events.list({
 		calendarId: 'b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f@group.calendar.google.com',
-		maxResults: 25,
+		maxResults: 50,
 		singleEvents: true,
 		orderBy: 'startTime',
 		q: query,
