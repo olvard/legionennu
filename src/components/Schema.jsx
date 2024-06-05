@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Pagination, PaginationNext, PaginationPrevious, PaginationContent, PaginationItem } from './ui/pagination'
 
 function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 	const [events, setEvents] = useState([])
@@ -71,7 +72,9 @@ function GetEvents({ viewMode, setViewMode, query, setQuery }) {
 								<CardHeader className='p-3 pb-0'>
 									<CardTitle className='text-sm font-bold text-white '>{event.summary}</CardTitle>
 								</CardHeader>
-								<CardDescription className=' pl-3 text-xs font-thin'>{event.location}</CardDescription>
+								<CardDescription className='mb-2 pl-3 text-xs font-thin'>
+									{event.location}
+								</CardDescription>
 								<CardFooter className='text-xs pl-3'>
 									{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
 									{formatDateTime(event.end.dateTime || event.end.date)[1]}
@@ -91,18 +94,18 @@ export default function Schema() {
 
 	return (
 		<div id='schema' className='w-9/12 h-max '>
-			<div className='flex justify-between items-center'>
+			<div className='sm:flex-row flex-col flex justify-between sm:items-center'>
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>
 					<Button
-						className={`mx-4 ${viewMode === 'day' ? 'bg-accent text-white' : ''}`}
+						className={`sm:inline-block hidden mx-4 ${viewMode === 'day' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setViewMode('day')}
 					>
 						Dag
 					</Button>
 					<Button
-						className={`mx-4 ${viewMode === 'week' ? 'bg-accent text-white' : ''}`}
+						className={`sm:inline-block hidden mx-4 ${viewMode === 'week' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setViewMode('week')}
 					>
@@ -110,19 +113,29 @@ export default function Schema() {
 					</Button>
 					{/* Additional buttons to change the query parameter */}
 					<Button
-						className={`mx-4 ${query === 'MT' ? 'bg-accent text-white' : ''}`}
+						className={`ml-0 mr-4 mb-4 sm:mx-4 ${query === 'MT' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setQuery('MT')}
 					>
 						MT
 					</Button>
 					<Button
-						className={`mx-4 ${query === 'GDK' ? 'bg-accent text-white' : ''}`}
+						className={`sm:mx-4 ${query === 'GDK' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setQuery('GDK')}
 					>
 						GDK
 					</Button>
+					<Pagination className={`${viewMode === 'week' ? 'sm:hidden' : ''}`}>
+						<PaginationContent>
+							<PaginationItem>
+								<PaginationPrevious></PaginationPrevious>
+							</PaginationItem>
+							<PaginationItem>
+								<PaginationNext></PaginationNext>
+							</PaginationItem>
+						</PaginationContent>
+					</Pagination>
 				</div>
 			</div>
 
