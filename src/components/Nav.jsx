@@ -6,7 +6,7 @@ const Nav = () => {
 			<div className='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<div className='flex items-center justify-between h-10'>
 					<div className='flex-shrink-0 font-bold'>NOLLEP2024</div>
-					<div className='hidden md:block '>
+					<div className='hidden sm:block '>
 						<div className='ml-6 flex items-center md:ml-0 '>
 							{/* Your navigation items */}
 							<a
