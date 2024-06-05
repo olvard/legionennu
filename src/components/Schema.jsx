@@ -46,7 +46,7 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 	const uniqueDates = Object.keys(eventsByDate).sort()
 
 	return (
-		<div className='overflow-auto'>
+		<div className=''>
 			<div className={`${viewMode === 'day' ? 'flex flex-col' : 'grid grid-cols-4 gap-5'}`}>
 				{/* Render current date */}
 				{viewMode === 'day' ? (
@@ -86,7 +86,7 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 							{eventsByDate[date]?.map((event, eventIndex) => (
 								<Card
 									key={eventIndex}
-									className={`mb-4 ${
+									className={`mb-4  ${
 										parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
 											parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
 										2
@@ -137,14 +137,14 @@ export default function Schema() {
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>
 					<Button
-						className={`sm:inline-block hidden mx-4 ${viewMode === 'day' ? 'bg-accent text-white' : ''}`}
+						className={`lg:inline-block hidden mx-4 ${viewMode === 'day' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setViewMode('day')}
 					>
 						Dag
 					</Button>
 					<Button
-						className={`sm:inline-block hidden mx-4 ${viewMode === 'week' ? 'bg-accent text-white' : ''}`}
+						className={`lg:inline-block hidden mx-4 ${viewMode === 'week' ? 'bg-accent text-white' : ''}`}
 						variant='outline'
 						onClick={() => setViewMode('week')}
 					>
