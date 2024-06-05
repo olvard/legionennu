@@ -2,7 +2,7 @@ export default function Legenden() {
 	return (
 		<div id='legenden' className='w-9/12'>
 			<h1 className=' font-serif text-5xl font-bold text-orange-100 mb-4'>LEGENDEN</h1>
-			<div className='flex'>
+			<div className='flex flex-col sm:flex-row'>
 				<p className='font-serif text-orange-100 opacity-70'>
 					För länge länge länge länge länge sedan, innan människorna och till och med innan dinosaurierna,
 					fanns det bara planeter och solar. Solarna både värmde och lyste upp universums alla håll och
@@ -13,15 +13,15 @@ export default function Legenden() {
 				<img
 					src='paragraf1.jpeg'
 					alt='paragraf1'
-					className='w-1/4 h-1/3 ml-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 			<br></br>
-			<div className='flex'>
+			<div className='flex flex-col-reverse sm:flex-row'>
 				<img
 					src='paragraf2.jpeg'
 					alt='paragraf2'
-					className='w-1/4 h-1/3 mr-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:mr-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 				<p className='font-serif text-orange-100 opacity-70'>
 					Efter en evighet landade Legionen på jorden. Mellan berg och dalar på ett jättestort fält gjorde de
@@ -33,7 +33,7 @@ export default function Legenden() {
 				</p>
 			</div>
 			<br></br>
-			<div className='flex'>
+			<div className='flex flex-col sm:flex-row'>
 				<p className='font-serif text-orange-100 opacity-70'>
 					{' '}
 					Legionen visste nu varför de hamnat just här på vår planet, det var för att beskydda Nollan. Genast
@@ -46,15 +46,15 @@ export default function Legenden() {
 				<img
 					src='blenda.jpeg'
 					alt='paragraf3'
-					className='w-1/4 h-1/3 ml-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 			<br></br>
-			<div className='flex'>
+			<div className='flex flex-col-reverse sm:flex-row'>
 				<img
 					src='sloth.jpeg'
 					alt='paragraf4'
-					className='w-1/4 h-1/3 mr-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:mr-4  mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 				<p className='font-serif text-orange-100 opacity-70'>
 					Moe var uppe först av alla nästa morgon, och likt en tupp väckte han resten av Legionen med sina
@@ -66,7 +66,7 @@ export default function Legenden() {
 				</p>
 			</div>
 			<br></br>
-			<div className='flex'>
+			<div className='flex flex-col sm:flex-row'>
 				<p className='font-serif text-orange-100 opacity-70'>
 					{' '}
 					Legionen fortsatte sin långa resa, nu med nyfunnen energi med ananas i deras magar. Inget kunde
@@ -83,7 +83,7 @@ export default function Legenden() {
 				<img
 					src='arrive.jpeg'
 					alt='paragraf5'
-					className='w-1/3 h-1/3 ml-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 			<br></br>
@@ -95,7 +95,7 @@ export default function Legenden() {
 				<img
 					src='group.png'
 					alt='group'
-					className='w-3/4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-3/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 		</div>
