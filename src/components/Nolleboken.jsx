@@ -3,7 +3,7 @@ import { Card, CardContent, CardTitle, CardHeader, CardFooter } from './ui/card'
 export default function Nolleboken() {
 	return (
 		<div id='nolleboken' className='flex flex-col w-9/12'>
-			<Card className=' h-96 border-0 shadow-none'>
+			<Card className=' h-96 border-0 shadow-none bg-secondary'>
 				<CardHeader>
 					<CardTitle className='text-5xl font-bold text-white'>Nolleboken</CardTitle>
 				</CardHeader>
