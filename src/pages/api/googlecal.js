@@ -5,10 +5,13 @@ const SERVICE_ACCOUNT_KEY = process.env.CREDS
 
 export default async function handler(req, res) {
 	try {
+		const { q } = req.query
+		const query = q || 'MT' // Default query is 'MT' if none is provided
+
 		console.log('inside server')
 		const auth = await getAuth()
 
-		const events = await listEvents(auth)
+		const events = await listEvents(auth, q)
 		res.status(200).json(events)
 	} catch (error) {
 		console.error('Error:', error)
@@ -32,13 +35,14 @@ async function getAuth() {
 	}
 }
 
-async function listEvents(auth) {
+async function listEvents(auth, query) {
 	const calendar = google.calendar({ version: 'v3', auth })
 	const res = await calendar.events.list({
 		calendarId: 'b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f@group.calendar.google.com',
 		maxResults: 25,
 		singleEvents: true,
 		orderBy: 'startTime',
+		q: query,
 	})
 
 	console.log('Events:', res.data.items)
