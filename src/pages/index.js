@@ -7,6 +7,7 @@ import TextDivider from '@/components/TextDivider'
 import Schema from '@/components/Schema'
 import { Providers } from '@/components/Providers'
 import Legenden from '@/components/Legenden'
+import Spons from '@/components/Spons'
 
 export default function Home() {
 	return (
@@ -22,6 +23,7 @@ export default function Home() {
 				<TextDivider />
 				<Schema />
 				<Legenden />
+				<Spons />
 			</div>
 		</>
 	)
