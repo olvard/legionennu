@@ -46,7 +46,7 @@ export default function Legenden() {
 				<img
 					src='blenda.jpeg'
 					alt='paragraf3'
-					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 			<br></br>
@@ -54,7 +54,7 @@ export default function Legenden() {
 				<img
 					src='sloth.jpeg'
 					alt='paragraf4'
-					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:mr-4  mt-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:mr-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 				<p className='font-serif text-orange-100 opacity-70'>
 					Moe var uppe först av alla nästa morgon, och likt en tupp väckte han resten av Legionen med sina
@@ -83,19 +83,19 @@ export default function Legenden() {
 				<img
 					src='arrive.jpeg'
 					alt='paragraf5'
-					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:ml-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 			<br></br>
 			<div className='flex flex-col justify-center items-center'>
-				<p className='font-serif text-orange-100 opacity-70'>
+				<p className='font-serif text-orange-100 opacity-70 mb-2'>
 					Av solen kom de till jorden och tog sig över land och hav för att utföra deras uppdrag - att
 					beskydda Nollan.
 				</p>
 				<img
 					src='group.png'
 					alt='group'
-					className='w-1/1 sm:w-3/4 sm:h-1/3 sm:ml-4 mt-4 rounded-md border-double border-4 border-orange-100'
+					className='w-1/1 sm:w-3/4 sm:h-1/3 sm:ml-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 				/>
 			</div>
 		</div>
