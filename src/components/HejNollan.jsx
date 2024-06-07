@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function HejNollan() {
 	return (
-		<Card className='w-9/12 bg-gradient-to-r from-red-700 to-red-800'>
+		<Card className='w-10/12 sm:w-8/12 bg-gradient-to-r from-red-700 to-red-800'>
 			<CardHeader>
 				<CardTitle className='text-5xl font-bold text-white'>
 					Hej{' '}
