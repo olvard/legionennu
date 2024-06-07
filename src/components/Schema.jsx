@@ -51,12 +51,12 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 				{/* Render current date */}
 				{viewMode === 'day' ? (
 					<div>
-						<h2 className='font-bold'>{currentDate}</h2>
+						<h2 className='font-bold sm:text-center'>{currentDate}</h2>
 						{/* Render events for the current date */}
 						{eventsByDate[currentDate]?.map((event, eventIndex) => (
 							<Card
 								key={eventIndex}
-								className={`mb-4 ${
+								className={`mb-4 sm:w-1/2 sm:mx-auto ${
 									parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
 										parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
 									2
@@ -65,12 +65,14 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 								}`}
 							>
 								<CardHeader className='p-3 pb-0'>
-									<CardTitle className='text-sm font-bold text-white'>{event.summary}</CardTitle>
+									<CardTitle className='text-sm md:text-xl font-bold text-white'>
+										{event.summary}
+									</CardTitle>
 								</CardHeader>
 								<CardDescription className='mb-2 pl-3 text-xs font-thin'>
 									{event.location}
 								</CardDescription>
-								<CardFooter className='text-xs pl-3'>
+								<CardFooter className='text-s pl-3'>
 									{formatDateTime(event.start.dateTime || event.start.date)[1]} -{' '}
 									{formatDateTime(event.end.dateTime || event.end.date)[1]}
 								</CardFooter>
@@ -132,7 +134,7 @@ export default function Schema() {
 	}
 
 	return (
-		<div id='schema' className='w-9/12 h-max'>
+		<div id='schema' className='w-10/12 sm:w-8/12 h-max'>
 			<div className='sm:flex-row flex-col flex justify-between sm:items-center'>
 				<h1 className='text-5xl font-bold text-white mb-4'>Schema</h1>
 				<div>

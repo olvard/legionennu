@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export default function TextDivider() {
 	return (
-		<div className='w-9/12 hidden sm:inline-block'>
+		<div className='w-10/12 sm:w-8/12 hidden sm:inline-block'>
 			<p className='font-serif text-justify text-white opacity-10 text-3xl '>
 				Sub splendōre aurōræ solis, omnia lūcet et clāret. Hīc, ubi fervēns lūx prōnūntiat, veritās ēmergitur et
 				arcānīs rēbus submōtīs, cūncta palam fiunt. Legionen, vigil et custōs īgnis aeternī, penetrat arcānīs
