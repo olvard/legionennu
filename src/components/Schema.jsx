@@ -133,6 +133,26 @@ export default function Schema() {
 		setCurrentDate(previousDate.toISOString().split('T')[0])
 	}
 
+	useEffect(() => {
+		const mediaQuery = window.matchMedia('(max-width: 1099px)')
+		const handleMediaChange = (e) => {
+			if (e.matches) {
+				setViewMode('day')
+			} else {
+				setViewMode('week')
+			}
+		}
+
+		// Check initial screen size
+		handleMediaChange(mediaQuery)
+
+		// Listen for screen size changes
+		mediaQuery.addEventListener('change', handleMediaChange)
+
+		// Clean up the event listener on component unmount
+		return () => mediaQuery.removeEventListener('change', handleMediaChange)
+	}, [])
+
 	return (
 		<div id='schema' className='w-10/12 sm:w-8/12 h-max'>
 			<div className='sm:flex-row flex-col flex justify-between sm:items-center'>
