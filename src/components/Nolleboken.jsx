@@ -23,7 +23,7 @@ export default function Nolleboken() {
 							alt='book'
 						></img>
 					</a>
-					<a href='nollebokgdk.pdf' target='_blank' rel='noreferrer' className='block w-1/2 h-fit'>
+					<a href='nollebokmt.pdf' target='_blank' rel='noreferrer' className='block w-1/2 h-fit'>
 						<img
 							className='w-56  h-1/2  transition duration-150 ease-in-out hover:scale-125 hover:cursor-pointer ml-auto mr-auto'
 							src='mtbook.svg'
