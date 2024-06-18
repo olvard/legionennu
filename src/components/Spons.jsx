@@ -15,11 +15,11 @@ export default function Spons() {
 
   return (
     <div className='w-11/12 pb-8'>
-      <Card className='h-56 border-0 shadow-none bg-orange-100 flex items-center gap-20'>
+      <Card className='sm:h-56 h-full border-0 shadow-none bg-orange-100 flex sm:flex-row flex-col items-center gap-10 sm:gap-20 p-8'>
         <img src='strommen.svg' alt='Strömmen' className='w-1/4 h-1/3 md:h-2/3 mx-0' />
-        <img src='korps.png' alt='korps' className='w-1/4' />
+        <img src='korps.png' alt='korps' className='sm:w-1/4 w-1/3' />
         {showSkylt && (
-          <img src='skylt.png' alt='skylt' className='w-1/4 mr-4' />
+          <img src='skylt.png' alt='skylt' className='sm:w-1/4 w-1/3 mr-4' />
         )}
       </Card>
     </div>
