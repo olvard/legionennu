@@ -19,7 +19,7 @@ export default function Spons() {
         <img src='strommen.svg' alt='Strömmen' className='w-1/4 h-1/3 md:h-2/3 mx-0' />
         <img src='korps.png' alt='korps' className='w-1/4' />
         {showSkylt && (
-          <img src='skylt.png' alt='skylt' className='w-1/4 mr-8' />
+          <img src='skylt.png' alt='skylt' className='w-1/4 mr-4' />
         )}
       </Card>
     </div>
