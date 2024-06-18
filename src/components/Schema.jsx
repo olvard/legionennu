@@ -56,12 +56,12 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 						{eventsByDate[currentDate]?.map((event, eventIndex) => (
 							<Card
 								key={eventIndex}
-								className={`mb-4 sm:w-1/2 sm:mx-auto ${
+								className={`mb-4 sm:w-1/2 sm:mx-auto h-full ${
 									parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
 										parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
 									2
 										? 'h-44'
-										: 'h-20'
+										: 'h-full'
 								}`}
 							>
 								<CardHeader className='p-3 pb-0'>
