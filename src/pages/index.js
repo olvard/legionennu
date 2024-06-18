@@ -16,7 +16,8 @@ export default function Home() {
 			<Providers>
 				<ParallaxComponent />
 			</Providers>
-			<div className='h-9000 flex flex-col items-center space-y-40'>
+
+			<div className='max-w-[1440px] flex flex-col items-center space-y-40 mx-auto '>
 				<HejNollan />
 				<Divider />
 				<Nolleboken />
