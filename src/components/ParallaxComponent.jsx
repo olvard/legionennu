@@ -51,7 +51,7 @@ const Component = () => {
 		shouldAlwaysCompleteAnimation: true,
 		children: (
 			<div className='absolute inset-0 flex items-center justify-center'>
-				<img src='logo.svg' alt='logo' />
+				<img src='logo_noyear.svg' alt='logo' />
 			</div>
 		),
 	}
