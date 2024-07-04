@@ -37,12 +37,20 @@ async function getAuth() {
 
 async function listEvents(auth, query) {
 	const calendar = google.calendar({ version: 'v3', auth })
+
+	let current_cal = 'b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f@group.calendar.google.com'
+
+	if (query !== 'MT') {
+		current_cal = 'a5ceffd219c864222c7717aa24e386d764f31b47e3e5a4ec51ac2831e7ccc9ad@group.calendar.google.com'
+	}
+
 	const res = await calendar.events.list({
-		calendarId: 'b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f@group.calendar.google.com',
+		// a5ceffd219c864222c7717aa24e386d764f31b47e3e5a4ec51ac2831e7ccc9ad@group.calendar.google.com
+		calendarId: current_cal,
 		maxResults: 50,
 		singleEvents: true,
 		orderBy: 'startTime',
-		q: query,
+		
 	})
 
 	console.log('Events:', res.data.items)
