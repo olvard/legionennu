@@ -205,6 +205,27 @@ export default function Schema() {
 			</div>
 
 			<GetEvents viewMode={viewMode} currentDate={currentDate} setCurrentDate={setCurrentDate} query={query} />
+
+			<h3 className='text-orange-100 font-semibold mt-4'>Prenumerera på kalendern: </h3>
+			<div className='flex space-x-8 py-2'>
+				<a
+					className='font-extrabold text-orange-600 hover:underline'
+					href='https://calendar.google.com/calendar/u/0?cid=YjNjNDcyMzNkYjdkMDM1ZGZiZDRkMDA1MmY3MjI0YmJmYjYzY2VmZDZkZTBkOWQ3MmEwYzExMTIzMTQxOTEzZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
+				>
+					MT
+				</a>
+				<a
+					className='font-extrabold text-green-700 hover:underline'
+					href='https://calendar.google.com/calendar/u/0?cid=YTVjZWZmZDIxOWM4NjQyMjJjNzcxN2FhMjRlMzg2ZDc2NGYzMWI0N2UzZTVhNGVjNTFhYzI4MzFlN2NjYzlhZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
+				>
+					GDK
+				</a>
+			</div>
+			<p className='text-orange-100 opacity-50'>
+				Du kan prenumerera på kalendern genom att klicka länken för ditt program.
+				{/* om det inte funkar som det ska
+				kan du manuellt lägga till en ny kalender från webbadress och kopiera länken där. */}
+			</p>
 		</div>
 	)
 }

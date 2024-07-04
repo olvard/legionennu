@@ -1,6 +1,6 @@
 export default function Legenden() {
 	return (
-		<div id='legenden' className='w-9/12'>
+		<div id='legenden' className='w-9/12 sm:w-8/12'>
 			<h1 className=' font-serif text-5xl font-bold text-orange-100 mb-4'>LEGENDEN</h1>
 			<div className='flex flex-col sm:flex-row'>
 				<p className='font-serif text-orange-100 opacity-70'>
