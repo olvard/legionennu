@@ -58,7 +58,7 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 						{eventsByDate[currentDate]?.map((event, eventIndex) => (
 							<Card
 								key={eventIndex}
-								className={`mb-4 sm:w-1/2 sm:mx-auto h-full ${
+								className={`mb-4 sm:w-1/2 sm:mx-auto h-full bg-foreground text-white border-0 ${
 									parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
 										parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
 									2
@@ -90,7 +90,7 @@ function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 							{eventsByDate[date]?.map((event, eventIndex) => (
 								<Card
 									key={eventIndex}
-									className={`mb-4  ${
+									className={`mb-4 bg-foreground text-white border-0 ${
 										parseFloat(formatDateTime(event.end.dateTime || event.end.date)[1]) -
 											parseFloat(formatDateTime(event.start.dateTime || event.start.date)[1]) >
 										2
