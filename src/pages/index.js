@@ -8,6 +8,7 @@ import Schema from '@/components/Schema'
 import { Providers } from '@/components/Providers'
 import Legenden from '@/components/Legenden'
 import Spons from '@/components/Spons'
+import { Toaster } from '@/components/ui/toaster'
 
 export default function Home() {
 	return (
@@ -23,6 +24,7 @@ export default function Home() {
 				<Nolleboken />
 				<TextDivider />
 				<Schema />
+				<Toaster />
 				<Legenden />
 				<Spons />
 			</div>
