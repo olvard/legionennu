@@ -32,15 +32,23 @@ const Component = () => {
 	// }
 
 	const background = {
-		image: 'parallax3.png',
+		image: 'p1.png',
 		translateY: [0, 30],
 		opacity: [1, 60],
 		scale: [1, 1, 'easeOutCubic'],
 		shouldAlwaysCompleteAnimation: true,
 	}
 
+	const layer1 = {
+		image: 'p3.png',
+		translateY: [0, 25],
+		opacity: [1, 20],
+		scale: [1, 1, 'easeOutCubic'],
+		shouldAlwaysCompleteAnimation: true,
+	}
+
 	const foreground = {
-		image: 'parallax4.png',
+		image: 'p4.png',
 		translateY: [0, 20],
 		scale: [1, 1, 'easeOutCubic'],
 		shouldAlwaysCompleteAnimation: true,
@@ -51,13 +59,13 @@ const Component = () => {
 		shouldAlwaysCompleteAnimation: true,
 		children: (
 			<div className='absolute inset-0 flex items-center justify-center'>
-				<img src='logo_noyear.svg' alt='logo' />
+				<img className='w-[906px] h-[1167px] max-w-[906px] max-h-[1167px]' src='logo_noyear.svg' alt='logo' />
 			</div>
 		),
 	}
 
 	const foreforeground = {
-		image: 'parallax5.png',
+		image: 'p5.png',
 		translateY: [0, 1],
 		scale: [1, 1, 'easeOutCubic'],
 		shouldAlwaysCompleteAnimation: true,
@@ -65,7 +73,7 @@ const Component = () => {
 
 	return (
 		<div className='pb-24'>
-			<ParallaxBanner layers={[background, foreground, logo, foreforeground]} className='h-96' />
+			<ParallaxBanner layers={[background, layer1, foreground, foreforeground, logo]} className='h-screen' />
 		</div>
 	)
 }

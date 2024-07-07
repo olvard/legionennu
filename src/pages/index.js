@@ -9,6 +9,7 @@ import { Providers } from '@/components/Providers'
 import Legenden from '@/components/Legenden'
 import Spons from '@/components/Spons'
 import { Toaster } from '@/components/ui/toaster'
+import OrnamentDivider from '@/components/OrnamentDivider'
 
 export default function Home() {
 	return (
@@ -21,10 +22,11 @@ export default function Home() {
 			<div className='max-w-[1440px] flex flex-col items-center space-y-40 mx-auto '>
 				<HejNollan />
 				<Divider />
-				<Nolleboken />
-				<TextDivider />
 				<Schema />
 				<Toaster />
+				{/* <OrnamentDivider /> */}
+				<Nolleboken />
+				<TextDivider />
 				<Legenden />
 				<Spons />
 			</div>
