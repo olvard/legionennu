@@ -74,4 +74,7 @@
 		@apply bg-background text-foreground; /* Apply background and text color to body */
 		@apply overflow-y-scroll;
 	}
+	.custom-outline-offset {
+		outline-offset: -10px;
+	}
 }
