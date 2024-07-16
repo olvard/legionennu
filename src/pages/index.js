@@ -19,6 +19,8 @@ export default function Home() {
 				<ParallaxComponent />
 			</Providers>
 
+			<img src='logo_noyear.svg' alt='logo' className='p-8 w-9/12 mx-auto sm:hidden' />
+
 			<div className='max-w-[1440px] flex flex-col items-center space-y-40 mx-auto '>
 				<HejNollan />
 				<Divider />

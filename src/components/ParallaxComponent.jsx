@@ -72,8 +72,8 @@ const Component = () => {
 	}
 
 	return (
-		<div className='pb-24'>
-			<ParallaxBanner layers={[background, layer1, foreground, foreforeground, logo]} className='h-screen' />
+		<div className='pb-24 hidden sm:block'>
+			<ParallaxBanner layers={[background, layer1, foreground, foreforeground, logo]} className='h-screen ' />
 		</div>
 	)
 }
