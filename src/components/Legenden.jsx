@@ -97,13 +97,14 @@ export default function Legenden() {
 					Av solen kom de till jorden och tog sig över land och hav för att utföra deras uppdrag - att
 					beskydda Nollan.
 				</p>
-				<img
+				{/* <img
 					src='group.png'
 					alt='group'
 					className='w-1/1 sm:w-3/4 sm:h-1/3 sm:ml-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 					draggable='false'
-				/>
+				/> */}
 			</div>
+			<iframe className='w-full h-96' src='https://www.youtube.com/embed/Fzp8Wku-_aU'></iframe>
 		</div>
 	)
 }
