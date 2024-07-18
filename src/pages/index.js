@@ -26,7 +26,6 @@ export default function Home() {
 				<Divider />
 				<Schema />
 				<Toaster />
-				{/* <OrnamentDivider /> */}
 				<Nolleboken />
 				<TextDivider />
 				<Legenden />
