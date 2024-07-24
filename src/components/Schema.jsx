@@ -220,7 +220,7 @@ export default function Schema() {
 							title: 'Schema för MT kopierat till urklipp!',
 						})
 						navigator.clipboard.writeText(
-							'https://calendar.google.com/calendar/ical/b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f%40group.calendar.google.com/public/basic.ics'
+							'https://calendar.google.com/calendar/ical/a5ceffd219c864222c7717aa24e386d764f31b47e3e5a4ec51ac2831e7ccc9ad%40group.calendar.google.com/public/basic.ics'
 						)
 					}}
 				>
@@ -235,7 +235,7 @@ export default function Schema() {
 							title: 'Schema för GDK kopierat till urklipp!',
 						})
 						navigator.clipboard.writeText(
-							'https://calendar.google.com/calendar/ical/a5ceffd219c864222c7717aa24e386d764f31b47e3e5a4ec51ac2831e7ccc9ad%40group.calendar.google.com/public/basic.ics'
+							'https://calendar.google.com/calendar/ical/b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f%40group.calendar.google.com/public/basic.ics'
 						)
 					}}
 				>
