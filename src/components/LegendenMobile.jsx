@@ -4,9 +4,9 @@ export default function LegendenMobile() {
 			id='legenden'
 			className='w-10/12  bg-orange-300 p-10 rounded-lg border-double border-4 border-orange-950 md:hidden block'
 		>
-			<h1 className=' font-serif text-5xl font-bold text-orange-950 mb-4'>LEGENDEN</h1>
+			<h1 className=' font-serif text-4xl font-bold text-orange-950 mb-4'>LEGENDEN</h1>
 			<div className='flex flex-col sm:flex-row'>
-				<p className='font-serif text-orange-950 opacity-70'>
+				<p className='font-serif text-orange-950 opacity-70 text-justify'>
 					För länge länge länge länge länge sedan, innan människorna och till och med innan dinosaurierna,
 					fanns det bara planeter och solar. Solarna både värmde och lyste upp universums alla håll och
 					kanter, men en dag hände någonting märkligt. Den största solen på flera ljusårs radie började mullra
@@ -22,7 +22,7 @@ export default function LegendenMobile() {
 			</div>
 			<br></br>
 			<div className='flex flex-col-reverse sm:flex-row'>
-				<p className='font-serif text-orange-950 opacity-70'>
+				<p className='font-serif text-orange-950 opacity-70 text-justify'>
 					Efter en evighet landade Legionen på jorden. Mellan berg och dalar på ett jättestort fält gjorde de
 					sig hemmastadda under midnattssolen. Där hade de det bra, men alla kände att det fanns en anledning
 					till att de hade hamnat just där, men visste inte varför. En morgon när Mike tog en promenad i
@@ -33,7 +33,7 @@ export default function LegendenMobile() {
 			</div>
 			<br></br>
 			<div className='flex flex-col sm:flex-row'>
-				<p className='font-serif text-orange-950 opacity-70'>
+				<p className='font-serif text-orange-950 opacity-70 text-justify'>
 					{' '}
 					Legionen visste nu varför de hamnat just här på vår planet, det var för att beskydda Nollan. Genast
 					påbörjade de sin vandring mot Norrköping. Det var en lång resa och de vandrade dag som natt. Blenda
@@ -51,7 +51,7 @@ export default function LegendenMobile() {
 					className='w-1/1 sm:w-1/4 sm:h-1/3 sm:mr-4 sm:mt-0 mt-4 rounded-md border-double border-4 border-orange-100'
 					draggable='false'
 				/>
-				<p className='font-serif text-orange-950 opacity-70'>
+				<p className='font-serif text-orange-950 opacity-70 text-justify'>
 					Moe var uppe först av alla nästa morgon, och likt en tupp väckte han resten av Legionen med sina
 					morgonhälsningar. Många var trötta, men de visste att Nollan väntade i Norrköping, och det fanns
 					bara en väg dit. Plötsligt hörde de något som tasslade uppe i träden och såg att det var inget annat
@@ -62,7 +62,7 @@ export default function LegendenMobile() {
 			</div>
 			<br></br>
 			<div className='flex flex-col sm:flex-row'>
-				<p className='font-serif text-orange-950 opacity-70'>
+				<p className='font-serif text-orange-950 opacity-70 text-justify'>
 					{' '}
 					Legionen fortsatte sin långa resa, nu med nyfunnen energi med ananas i deras magar. Inget kunde
 					stoppa dem nu, inte ens de mörkaste av tunnlar. Matt, den modigaste av dem, tog täten genom en mörk
@@ -78,7 +78,7 @@ export default function LegendenMobile() {
 			</div>
 			<br></br>
 			<div className='flex flex-col justify-center items-center'>
-				<p className='font-serif text-orange-950 opacity-70 mb-2'>
+				<p className='font-serif text-orange-950 opacity-70 mb-2 text-justify'>
 					Av solen kom de till jorden och tog sig över land och hav för att utföra deras uppdrag - att
 					beskydda Nollan.
 				</p>
