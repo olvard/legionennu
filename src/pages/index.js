@@ -8,7 +8,7 @@ import Schema from '@/components/Schema'
 import { Providers } from '@/components/Providers'
 import Legenden from '@/components/Legenden'
 import Spons from '@/components/Spons'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from '@/components/ui/sonner'
 import OrnamentDivider from '@/components/OrnamentDivider'
 import LegendenMobile from '@/components/LegendenMobile'
 
@@ -19,14 +19,12 @@ export default function Home() {
 			<Providers>
 				<ParallaxComponent />
 			</Providers>
-
 			<img src='logo_noyear.svg' alt='logo' className='p-8 w-9/12 mx-auto sm:hidden' />
-
 			<div className='max-w-[1440px] flex flex-col items-center space-y-40 mx-auto '>
 				<HejNollan />
 				<Divider />
 				<Schema />
-				<Toaster />
+				<Toaster richColors />
 				<Nolleboken />
 				<TextDivider />
 				<Legenden />

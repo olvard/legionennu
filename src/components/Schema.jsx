@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Card, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Pagination, PaginationNext, PaginationPrevious, PaginationContent, PaginationItem } from './ui/pagination'
-import { Input } from './ui/input'
-import { useToast } from '@/components/ui/use-toast'
+// import { useToast } from '@/components/ui/use-toast'
+import { toast } from 'sonner'
 
 function GetEvents({ viewMode, currentDate, setCurrentDate, query }) {
 	const [events, setEvents] = useState([])
@@ -155,8 +155,6 @@ export default function Schema() {
 		return () => mediaQuery.removeEventListener('change', handleMediaChange)
 	}, [])
 
-	const { toast } = useToast()
-
 	return (
 		<div id='schema' className='w-10/12 sm:w-8/12 h-max'>
 			<div className='sm:flex-row flex-col flex justify-between sm:items-center'>
@@ -216,9 +214,7 @@ export default function Schema() {
 					variant='secondary'
 					className='overflow-clip text-white font-bold bg-accent hover:bg-orange-600'
 					onClick={() => {
-						toast({
-							title: 'Schema för MT kopierat till urklipp!',
-						})
+						toast.success('Schema för MT kopierat till urklipp!')
 						navigator.clipboard.writeText(
 							'https://calendar.google.com/calendar/ical/a5ceffd219c864222c7717aa24e386d764f31b47e3e5a4ec51ac2831e7ccc9ad%40group.calendar.google.com/public/basic.ics'
 						)
@@ -231,9 +227,8 @@ export default function Schema() {
 					variant='secondary'
 					className='overflow-clip text-white font-bold bg-accent hover:bg-green-700'
 					onClick={() => {
-						toast({
-							title: 'Schema för GDK kopierat till urklipp!',
-						})
+						toast.success('Schema för GDK kopierat till urklipp!')
+
 						navigator.clipboard.writeText(
 							'https://calendar.google.com/calendar/ical/b3c47233db7d035dfbd4d0052f7224bbfb63cefd6de0d9d72a0c11123141913f%40group.calendar.google.com/public/basic.ics'
 						)
