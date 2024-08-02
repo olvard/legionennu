@@ -9,7 +9,6 @@ import { Providers } from '@/components/Providers'
 import Legenden from '@/components/Legenden'
 import Spons from '@/components/Spons'
 import { Toaster } from '@/components/ui/sonner'
-import OrnamentDivider from '@/components/OrnamentDivider'
 import LegendenMobile from '@/components/LegendenMobile'
 
 export default function Home() {
