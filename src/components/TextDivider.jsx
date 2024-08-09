@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function TextDivider() {
 	return (
@@ -8,9 +8,9 @@ export default function TextDivider() {
 				arcānīs rēbus submōtīs, cūncta palam fiunt. Legionen, vigil et custōs īgnis aeternī, penetrat arcānīs
 				mūrīs et audīt omnia. Per lūminis flammarumque opulentiam, audītur et cōgitātur. In hōc locus, ubi
 				ūniversum lūx ērumpit, Nollan har ett{' '}
-				<a className='hover:underline hover:bg-white' href='/chat'>
+				<Link className='hover:underline hover:bg-white' href='/chat'>
 					lösenord
-				</a>
+				</Link>
 				. Nec tamen sōlum aspicit, sed etiam animōs scrutātur et arcānōs volūminibus animārum lēgit. Sōlis
 				potentia, aeternum ardēns, per omnia radiat et omnibus aspectibus vidētur. Per hanc flammam ēvīgilem,
 				vēritās et cōgitātiōnēs exsilūnt et omnēs arcānī revelantur. In hōc locō, ubi sōlis lūx et ūmbrae
