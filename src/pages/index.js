@@ -10,6 +10,7 @@ import Legenden from '@/components/Legenden'
 import Spons from '@/components/Spons'
 import { Toaster } from '@/components/ui/sonner'
 import LegendenMobile from '@/components/LegendenMobile'
+import MobileDivider from '@/components/MobileDivider'
 
 export default function Home() {
 	return (
@@ -25,6 +26,7 @@ export default function Home() {
 				<Schema />
 				<Toaster richColors />
 				<Nolleboken />
+				<MobileDivider />
 				<TextDivider />
 				<Legenden />
 				<LegendenMobile />
