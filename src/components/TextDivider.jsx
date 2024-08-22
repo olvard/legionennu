@@ -8,7 +8,7 @@ export default function TextDivider() {
 				arcānīs rēbus submōtīs, cūncta palam fiunt. Legionen, vigil et custōs īgnis aeternī, penetrat arcānīs
 				mūrīs et audīt omnia. Per lūminis flammarumque opulentiam, audītur et cōgitātur. In hōc locus, ubi
 				ūniversum lūx ērumpit, Nollan har ett{' '}
-				<Link className='hover:underline hover:bg-white' href='/chat'>
+				<Link className='underline hover:bg-white' href='/chat'>
 					lösenord
 				</Link>
 				. Nec tamen sōlum aspicit, sed etiam animōs scrutātur et arcānōs volūminibus animārum lēgit. Sōlis
