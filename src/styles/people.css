@@ -1,0 +1,91 @@
+/* Gradient text style */
+.gradient-text {
+	background: linear-gradient(270deg, #ff8a00, #e52e71, #b06c27, #e82121);
+	background-size: 800% 800%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Image container to hold the image, glossy line, 3D tilt, and load animation */
+.image-container {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transform-style: preserve-3d;
+	perspective: 1000px; /* Enables 3D effect */
+	opacity: 0;
+	transform: translateY(30px);
+	animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Staggered animation delay for each card */
+.image-container:nth-child(odd) {
+	animation-delay: 0.2s;
+}
+.image-container:nth-child(even) {
+	animation-delay: 0.4s;
+}
+
+/* Animation for fading in and sliding up the cards */
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Pop out and 3D tilt effect on hover */
+.image-container:hover {
+	transform: scale(1.05) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image styling */
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+/* Glossy moving line effect */
+.image-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(75deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+	transform: skewX(-30deg);
+	animation: moveFlare 3s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes moveFlare {
+	0% {
+		left: -100%;
+	}
+	50% {
+		left: 100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
