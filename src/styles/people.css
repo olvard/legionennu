@@ -65,12 +65,12 @@
 }
 
 /* Glossy moving line effect */
-.image-container::before {
+.image-container:hover::before {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: -100%;
-	width: 50%;
+	width: 20%;
 	height: 100%;
 	background: linear-gradient(75deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 	transform: skewX(-30deg);
@@ -83,9 +83,9 @@
 		left: -100%;
 	}
 	50% {
-		left: 100%;
+		left: 150%;
 	}
 	100% {
-		left: 100%;
+		left: 150%;
 	}
 }
