@@ -10,7 +10,7 @@ const KEY = process.env.OPEN_API_KEY
 const openai = new OpenAI({
 	apiKey: KEY,
 })
-const MAX_TOKENS = 576 // Set your desired token limit
+const MAX_TOKENS = 1076 // Set your desired token limit
 
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
