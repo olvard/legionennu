@@ -7,18 +7,22 @@ export default function HejNollan() {
 				<CardTitle className='text-5xl font-bold text-white'>
 					Nämen hej{' '}
 					<span className='bg-gradient-to-r from-red-400 via-red-400 to-red-500 inline-block text-transparent bg-clip-text'>
-						Nollan!
+						nästa Legionär!
 					</span>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<p className='font-regular text-white'>
-					Välkommen till Linköpings universitet och Nolle-P 2024! De första två veckorna kallas för Nolle-P
-					och under denna tid kommer du att få lära känna universitetet, staden och dina nya vänner. Legionen
-					är här för att se till att du får en så bra start på studietiden som möjligt. Denna sida innehåller
-					schemat för alla aktiviteterna under Nolle-P, samt annat spännande.
+					Tiden är kommen… Vill du eller någon du känner vara nästa generations general eller kassör? Sök
+					eller nominera fram till 27 september kl. 23:59. Röd kärlek ❤️
 					<br></br>
-					<br></br>Vi ses snart, kanske.
+					<br></br>
+					<a
+						className='underline text-white'
+						href='https://docs.google.com/forms/d/e/1FAIpQLSdMwtca6qsaEEWUKcysm1e0HHZOldfGsUGi8nMyVNaUn2kTZw/viewform'
+					>
+						Sök/Nominera här.
+					</a>
 					{/* Vad kul att du har hittat hit. Här på hemsidan kan du hitta spännande grejer och nödvändig
 					information // kring vad Legionen hittar på. Legionen vill se till så att du får en så bra start på
 					universitetet som // möjligt när det kommer till både plugg och studentliv. Har Nollan tappat bort
