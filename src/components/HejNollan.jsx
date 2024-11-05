@@ -13,13 +13,13 @@ export default function HejNollan() {
 			</CardHeader>
 			<CardContent>
 				<p className='font-regular text-white'>
-					Tiden är kommen… Vill du eller någon du känner vara nästa generations general eller kassör? Sök
-					eller nominera fram till 27 september kl. 23:59. Röd kärlek ❤️
+					Tiden är kommen… Vill du eller någon du känner vara en del av nästa års Legionen? Sök eller nominera
+					fram till 16 november kl. 23:59. Röd kärlek ❤️
 					<br></br>
 					<br></br>
 					<a
 						className='underline text-white'
-						href='https://docs.google.com/forms/d/e/1FAIpQLSdMwtca6qsaEEWUKcysm1e0HHZOldfGsUGi8nMyVNaUn2kTZw/viewform'
+						href='https://docs.google.com/forms/d/e/1FAIpQLSdxWbYSYGGRHbJ1YN31S1p8ZbVaM2avcoVrSDYW6K97E7Vx9Q/viewform'
 					>
 						Sök/Nominera här.
 					</a>
