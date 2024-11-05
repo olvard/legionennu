@@ -17,12 +17,12 @@ export default function HejNollan() {
 					fram till 16 november kl. 23:59. Röd kärlek ❤️
 					<br></br>
 					<br></br>
-					<a
+					{/* <a
 						className='underline text-white'
 						href='https://docs.google.com/forms/d/e/1FAIpQLSdxWbYSYGGRHbJ1YN31S1p8ZbVaM2avcoVrSDYW6K97E7Vx9Q/viewform'
 					>
 						Sök/Nominera här.
-					</a>
+					</a> */}
 					{/* Vad kul att du har hittat hit. Här på hemsidan kan du hitta spännande grejer och nödvändig
 					information // kring vad Legionen hittar på. Legionen vill se till så att du får en så bra start på
 					universitetet som // möjligt när det kommer till både plugg och studentliv. Har Nollan tappat bort
