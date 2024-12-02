@@ -22,7 +22,7 @@ const CipherChallenge = ({ correctAnswers, correctFullAnswer }) => {
 
 		// Check if the full answer matches exactly
 		const isCorrect = answers[4] === correctFullAnswer
-		setMessage(isCorrect ? 'https://rasmussvala.itch.io/cheddar-chase' : 'nä äe')
+		setMessage(isCorrect ? 'bana 5B - https://rasmussvala.itch.io/cheddar-chase' : 'nä äe')
 	}
 
 	return (
