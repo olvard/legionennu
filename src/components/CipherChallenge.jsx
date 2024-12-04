@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CipherChallenge = ({ correctAnswers, correctFullAnswer }) => {
+const CipherChallenge = () => {
 	// State to manage user answers and input
 	const [answers, setAnswers] = useState(['', '', '', '', ''])
 	const [message, setMessage] = useState('')
@@ -12,17 +12,26 @@ const CipherChallenge = ({ correctAnswers, correctFullAnswer }) => {
 		setAnswers(newAnswers)
 	}
 
-	// Check if the cipher is solved
-	const checkCipher = () => {
-		// Ensure all answers are filled
+	const checkCipher = async () => {
 		if (answers.some((answer) => answer === '')) {
 			setMessage('nä äe')
-			return
 		}
+		try {
+			const response = await fetch('/api/check_cipher', {
+				method: 'POST',
+				body: JSON.stringify({ answer: answers[4] }),
+				headers: { 'Content-Type': 'application/json' },
+			})
 
-		// Check if the full answer matches exactly
-		const isCorrect = answers[4] === correctFullAnswer
-		setMessage(isCorrect ? 'bana 5B - https://rasmussvala.itch.io/cheddar-chase' : 'nä äe')
+			if (response.ok) {
+				const data = await response.json()
+				setMessage(data.message)
+			} else {
+				setMessage('nä äe')
+			}
+		} catch (error) {
+			console.error('Unlock failed')
+		}
 	}
 
 	return (
@@ -78,7 +87,7 @@ const CipherChallenge = ({ correctAnswers, correctFullAnswer }) => {
 					/>
 				</div>
 				<div>
-					<label className='block mb-2'>Lägg in dina svar i rätt ordning:</label>
+					<label className='block mb-2'>Lägg in dina svar i r___ä_t__t____ ordning:</label>
 					<input
 						type='text'
 						value={answers[4]}

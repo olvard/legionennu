@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Chat = ({ unlockCodes }) => {
+const Chat = () => {
 	const [message, setMessage] = useState('')
 	const [conversation, setConversation] = useState([])
 	const [tokenCount, setTokenCount] = useState(0) // For token limit
@@ -8,11 +8,22 @@ const Chat = ({ unlockCodes }) => {
 	const [isUnlocked, setIsUnlocked] = useState(false) // To check if chat is unlocked
 	const [unlockCode, setUnlockCode] = useState('') // Store the unlock code
 
-	const handleUnlock = () => {
-		if (unlockCodes == unlockCode) {
-			setIsUnlocked(true)
-		} else {
-			alert('Fel kod, försök igen.')
+	// Replace client-side handleUnlock
+	const handleUnlock = async () => {
+		try {
+			const response = await fetch('/api/unlock_chat', {
+				method: 'POST',
+				body: JSON.stringify({ unlockCode }),
+				headers: { 'Content-Type': 'application/json' },
+			})
+
+			if (response.ok) {
+				setIsUnlocked(true)
+			} else {
+				alert('Fel kod')
+			}
+		} catch (error) {
+			console.error('Unlock failed')
 		}
 	}
 
