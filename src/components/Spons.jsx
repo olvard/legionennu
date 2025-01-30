@@ -22,6 +22,10 @@ export default function Spons() {
 				<img src='korps.png' alt='korps' draggable='false' className='sm:w-1/4 w-2/3 ' />
 				{showSkylt && <img src='voyado.png' alt='voyado' className='sm:w-1/4 w-2/3 mr-8' />}
 			</Card>
+			Vi köper våra märken från mera.se
+			<a href='https://www.mera.se' target='_blank' rel='noreferrer'>
+				<img src='mera.png' alt='mera' className='w-2/12 h-auto  pt-2 ' />
+			</a>
 		</div>
 	)
 }

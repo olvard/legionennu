@@ -31,7 +31,6 @@ export default function Home() {
 				<Legenden />
 				<LegendenMobile />
 				<Spons />
-				<img src='mera.png' alt='logo' className='w-4/12 mx-auto' />
 			</div>
 		</>
 	)
